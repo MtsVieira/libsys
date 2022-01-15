@@ -1,0 +1,74 @@
+<%-include('partials/header.html')%>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <titulo>Inscreva-se</titulo>
+    </head>
+
+    <body>
+        <div class="container bg-image">
+            <div class="row">
+                <div class="col-sm-6 cadastro-form">
+                    <h1 class="display-4 header">LibSys</h1>
+                    <form class="submit form" method="post">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" placeholder="Seu Nome" name="name">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Seu Email" name="email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Senha</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Crie uma Senha" name="password">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="phone">Telefone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="82xxxxxxxxxx" name="phone">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Curso</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Seu Curso" name="curso">
+                            </div>
+                        </div>
+                        <span>Gênero</span>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+    Masculino
+  </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
+                            <label class="form-check-label" for="exampleRadios2">
+    Feminino
+  </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+    Outro
+  </label>
+                        </div>
+                        <div class="submit-button">
+                            <button type="submit" class="btn btn-primary">Criar uma conta!</button>
+                            <br>
+                            Ou
+                        </div>
+                    </form>
+                    <div class="submit-button">
+                        <a href="/login"><button class="btn btn-info">Entrar</button></a>
+                    </div>
+                    <div class="">
+                        <% for(var i=0; i< errs.length; i++){ %>
+                            <%= errs[i].message %>
+                            <br>
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-include('partials/footer.html')%>
