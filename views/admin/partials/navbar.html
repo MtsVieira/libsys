@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <a class="navbar-brand" href="#"><i class="fas fa-livro-open"></i> LibSys</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/home">Início <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Usuários
+</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/admin/usuarios">Ver Usuários</a>
+                    <a class="dropdown-item" href="/admin/usuarios/add">Add Usuários</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Livros
+</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/admin/livros">Ver Livros</a>
+                    <a class="dropdown-item" href="/admin/livros/add">Add Novo Livro</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/admin/livros/issued">Ver Livros Emprestados</a>
+                    <a class="dropdown-item" href="/admin/livros/solicitados">Ver Livros Solicitados</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Perfil
+</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/admin/perfil">Ver Perfil</a>
+                    <a class="dropdown-item" href="/admin/perfil/edit">Editar Perfil</a>
+                    <a class="dropdown-item" href="/admin/alterarpass">Mudar Senha</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Sair</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
