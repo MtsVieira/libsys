@@ -1,0 +1,88 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <titulo>Editar Livro</titulo>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+        <div class="container-fluid">
+            <div class="row">
+                <%-include('partials/sidebar.html')%>
+                <div class="col-md-10 content">
+                    <div class="row">
+                        <div class="col-md-11 livros-content">
+                            <p class="display-4">Editar Livro Existente</p>
+                            <form class="" method="post">
+                                <input type="text" name="livro_id" value="<%=res.livro_id%>" hidden>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Gênero</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" value="<%=res.genero%>" name="genero">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Título</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="titulo" value="<%=res.titulo%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Autor</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="autor" value="<%=res.autor%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Editora</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="editora" value="<%=res.editora%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Edição</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" name="edicao" value="<%=res.edicao%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">ISBN</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="isbn" value="<%=res.isbn%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Páginas</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" name="paginas" value="<%=res.paginas%>">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                                    <br>
+                                </div>
+                            </form>
+                            <div class="">
+                                <% for(var i=0; i< errs.length; i++){ %>
+                                    <%= errs[i].message %>
+                                    <br>
+                                <% } %>
+                                <% for(var i=0; i< success.length; i++){ %>
+                                    <%= success[i].message %>
+                                    <br>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<%-include('../partials/footer.html')%>

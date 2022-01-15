@@ -1,0 +1,63 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <titulo>Admin View usuario Profile</titulo>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+            <div class="container-fluid">
+                <div class="row">
+                    <%-include('partials/sidebar.html')%>
+                        <div class="col-md-10 content">
+                            <div class="row">
+                                <div class="col-md-6 perfil-content">
+                                    <p class="display-4"><%=res.nome%>'s Profile</p>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%=res.nome%>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%=res.email%>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Phone</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%=res.telefone%>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Curso</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%=res.curso%>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Gender</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%=res.genero%>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a href="/admin/usuarios/edit/<%=res.usuario_id%>">Edit usuario</a> |
+                                    <a href="/admin/usuarios/delete/<%=res.usuario_id%>">Delete usuario</a>
+
+                                </div>
+                                <div class="col-md-5 perfil-content">
+                                    <img class="profile-vector" src="/../../images/profile-vector" alt="">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <%-include('../partials/footer.html')%>

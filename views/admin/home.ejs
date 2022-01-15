@@ -1,0 +1,36 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <titulo>Admin - Início</titulo>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+        <div class="container-fluid">
+            <div class="row">
+                <%-include('partials/sidebar.html')%>
+                <div class="col-md-10 content">
+                    <p class="display-2">Visão Geral</p>
+                    <div class="alert alert-primary" role="alert">
+                        Total de Livros: <span style="float: right;"><%=bk%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Total de Membros: <span style="float: right;"><%=usr%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Total de livros emprestados: <span style="float: right;"><%=brwd%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Total de livros emprestados nos últimos 30 dias: <span style="float: right;"><%=mb%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Livro mais emprestado nos últimos 30 dias: <span style="float: right;"><%=mbb.titulo%> by <%=mbb.autor%> | Total: <%=mbb.magnitude%> vezes</span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Livro mais requisitado: <span style="float: right;"><%=mrb.titulo%> by <%=mrb.autor%> | Total: <%=mrb.magnitude%> vezes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%-include('../partials/footer.html')%>
