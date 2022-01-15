@@ -1,0 +1,69 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/usuario.css">
+    <titulo>Livros Emprestados</titulo>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+            <div class="container-fluid">
+                <div class="row">
+                    <%-include('partials/sidebar.html')%>
+                        <div class="col-md-10 content">
+                            <p class="display-3">Seus Livros Emprestados</p>
+                            <table class="table table-striped table-light table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Gênero</th>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Autor</th>
+                                        <th scope="col">Data Empréstimo</th>
+                                        <th scope="col">Dias Vencimento</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=0; i< res.length; i++){ %>
+                                        <tr>
+                                            <th scope="row">
+                                                <%=res[i].livro_id%>
+                                            </th>
+                                            <td>
+                                                <%=res[i].genero%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].titulo%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].autor%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].data_issued%>
+                                            </td>
+                                            <td>
+                                                <%
+                                                    var data1 = new data(res[i].data_issued);
+                                                    var data2 = new data();
+                                                    var timeDiff = Math.abs(data2.getTime() - data1.getTime());
+                                                    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                                                    var leftValid = 30 - diffDays;
+                                                %>
+                                                <%=leftValid+" Days"%>
+                                            </td>
+                                            <td>
+                                                <% if(leftValid >= 1) { %>
+                                                    Em Dia
+                                                <% } else { %>
+                                                    Atrasado
+                                                <% } %>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+
+            <%-include('../partials/footer.html')%>
